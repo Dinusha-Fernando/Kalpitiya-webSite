@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-white text-slate-900 antialiased leading-relaxed dark:bg-slate-950 dark:text-slate-100;
+}
+
+.container-px {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+.fade-up {
+  @apply will-change-transform;
+}
+
+::selection {
+  background: rgb(191 227 254);
+}
+
+.focus-ring {
+  @apply focus-visible:ring-2 focus-visible:ring-ocean-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+}
