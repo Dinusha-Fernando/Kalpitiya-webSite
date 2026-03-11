@@ -19,14 +19,14 @@ export default function ContactPage() {
   const { register, handleSubmit, formState, reset } = useForm<FormValues>();
 
   const contact = useMemo(() => {
-    const whatsappPhone = "94700000000";
+    const whatsappPhone = "94775829018";
     return {
-      email: "info@example.com",
-      phoneDisplay: "+94 70 000 0000",
-      phoneTel: "+94700000000",
+      email: "dinushafdo9998@gmail.com",
+      phoneDisplay: "0775829018",
+      phoneTel: "+94775829018",
       whatsappPhone,
       whatsappHref: `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
-        "Hi! I’d like to ask about tours in Kalpitiya."
+        "Hi! I'd like to ask about tours in Kalpitiya."
       )}`,
       location: "Kalpitiya, Sri Lanka",
       mapEmbedSrc: "https://www.google.com/maps?q=Kalpitiya%2C%20Sri%20Lanka&output=embed"

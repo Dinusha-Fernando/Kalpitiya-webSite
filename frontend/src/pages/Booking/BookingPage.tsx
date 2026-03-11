@@ -27,7 +27,7 @@ export default function BookingPage() {
   const selectedSlug = useWatch({ control, name: "activity" }) ?? activities[0]?.slug ?? "";
   const selectedActivity = useMemo(() => getActivityBySlug(selectedSlug), [selectedSlug]);
   const whatsappHref = useMemo(() => {
-    const phone = "94700000000";
+    const phone = "94775829018";
     const text = `Hi! I want to book: ${selectedActivity?.title ?? "a tour"} in Kalpitiya.`;
     return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
   }, [selectedActivity?.title]);

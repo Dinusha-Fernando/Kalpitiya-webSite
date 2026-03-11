@@ -1,7 +1,7 @@
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function WhatsAppButton() {
-  const phone = "94700000000";
+  const phone = "94775829018";
   const message = encodeURIComponent("Hi! I want to book a tour in Kalpitiya.");
   const href = `https://wa.me/${phone}?text=${message}`;
 
@@ -18,4 +18,3 @@ export default function WhatsAppButton() {
     </a>
   );
 }
-
