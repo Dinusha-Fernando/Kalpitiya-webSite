@@ -59,7 +59,7 @@ export default function BlogPage() {
                 </div>
               </div>
               <div className="p-8">
-                <div className="text-xs font-bold text-slate-400 tabular-nums">
+                <div className="text-xs font-bold text-slate-400 dark:text-slate-500 tabular-nums">
                   {p.date}
                 </div>
                 <h3 className="mt-3 text-xl font-bold tracking-tight text-slate-900 group-hover:text-ocean-600 transition-colors dark:text-slate-100 dark:group-hover:text-ocean-400">

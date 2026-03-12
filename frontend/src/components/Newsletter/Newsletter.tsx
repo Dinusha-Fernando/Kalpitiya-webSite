@@ -12,7 +12,7 @@ export default function Newsletter() {
           type="email"
           required
           placeholder="Email address"
-          className="h-11 w-full rounded-xl bg-white/95 px-4 text-slate-900 placeholder:text-slate-500 outline-none ring-1 ring-white/30 focus:ring-2 focus:ring-white"
+          className="h-11 w-full rounded-xl bg-white/95 dark:bg-white px-4 text-slate-900 placeholder:text-slate-500 outline-none ring-1 ring-white/30 focus:ring-2 focus:ring-white"
         />
         <button
           type="submit"

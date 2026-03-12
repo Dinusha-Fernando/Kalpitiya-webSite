@@ -12,11 +12,11 @@ type Props = PropsWithChildren<{
 
 const toneStyles = {
   default: "bg-white dark:bg-slate-950",
-  muted: "bg-slate-50/50 dark:bg-slate-900/20",
-  sand: "mesh-sand dark:from-slate-900 dark:via-slate-950 dark:to-sand-900/10",
+  muted: "bg-slate-50 dark:bg-slate-900",
+  sand: "bg-[#fdfcf7] dark:bg-slate-900",
   ocean: "mesh-ocean text-white",
   deep: "bg-slate-950 text-white",
-  glass: "glass dark:glass-dark mx-4 sm:mx-6 lg:mx-8 rounded-[2rem] sm:rounded-[3rem] my-8 sm:my-12 lg:my-16",
+  glass: "bg-white/60 dark:bg-slate-900/60 backdrop-blur-2xl border border-white/40 dark:border-slate-700/40 mx-4 sm:mx-6 lg:mx-8 rounded-[2rem] sm:rounded-[3rem] my-8 sm:my-12 lg:my-16 shadow-xl",
   sunset: "bg-gradient-to-br from-orange-50 via-white to-sand-100 dark:from-slate-950 dark:via-slate-900 dark:to-orange-900/10"
 };
 

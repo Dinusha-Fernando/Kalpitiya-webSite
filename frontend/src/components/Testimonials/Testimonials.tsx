@@ -22,11 +22,11 @@ export default function Testimonials() {
       {testimonials.map((t) => (
         <div
           key={t.name}
-          className="rounded-2xl border border-slate-200 bg-white p-6 dark:bg-slate-950 dark:border-slate-800"
+          className="rounded-2xl border border-white/10 bg-white/10 backdrop-blur-md p-6 hover:bg-white/15 transition-colors duration-300"
         >
-          <p className="text-slate-700 dark:text-slate-200">“{t.quote}”</p>
-          <div className="mt-4 text-sm font-medium text-slate-900 dark:text-slate-100">
-            {t.name} <span className="text-slate-500 dark:text-slate-400">· {t.country}</span>
+          <p className="text-white/90 leading-relaxed">"{t.quote}"</p>
+          <div className="mt-4 text-sm font-medium text-white">
+            {t.name} <span className="text-white/60">· {t.country}</span>
           </div>
         </div>
       ))}
