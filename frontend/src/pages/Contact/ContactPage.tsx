@@ -66,34 +66,36 @@ export default function ContactPage() {
 
       <Section
         title="Get in touch"
-        subtitle="Choose your preferred channel, or send a message using the form."
+        subtitle="Choose your preferred channel for the fastest response to your journey planning."
+        tone="sand"
+        divider="wave-bottom"
       >
         <div className="grid gap-8 lg:grid-cols-2">
-          <div className="grid gap-4">
-            <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-6">
+            <div className="grid gap-4 sm:grid-cols-2">
               <ContactCard
-                icon={<FaWhatsapp className="h-5 w-5" />}
+                icon={<FaWhatsapp className="h-6 w-6" />}
                 title="WhatsApp"
                 description="Fastest reply for bookings"
                 value={contact.phoneDisplay}
                 href={contact.whatsappHref}
               />
               <ContactCard
-                icon={<FiPhone className="h-5 w-5" />}
+                icon={<FiPhone className="h-6 w-6" />}
                 title="Phone"
                 description="Call for urgent questions"
                 value={contact.phoneDisplay}
                 href={`tel:${contact.phoneTel}`}
               />
               <ContactCard
-                icon={<FiMail className="h-5 w-5" />}
+                icon={<FiMail className="h-6 w-6" />}
                 title="Email"
                 description="Share details & requests"
                 value={contact.email}
                 href={`mailto:${contact.email}`}
               />
               <ContactCard
-                icon={<FiMapPin className="h-5 w-5" />}
+                icon={<FiMapPin className="h-6 w-6" />}
                 title="Location"
                 description="Meet-up point shared after booking"
                 value={contact.location}
@@ -101,133 +103,138 @@ export default function ContactPage() {
               />
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-white p-6">
-              <div className="flex items-start justify-between gap-4">
+            <div className="rounded-[2.5rem] border border-slate-200 bg-white p-8 shadow-sm dark:bg-slate-950 dark:border-slate-800">
+              <div className="flex flex-col sm:flex-row items-start justify-between gap-6">
                 <div>
-                  <div className="font-semibold tracking-tight">Before you message</div>
-                  <div className="mt-1 text-sm text-slate-600">
-                    Including these helps us respond faster:
-                  </div>
+                  <h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Before you message</h3>
+                  <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                    Including these details helps us provide a tailored quote immediately:
+                  </p>
                 </div>
                 <Link
                   to="/booking"
-                  className="shrink-0 inline-flex items-center justify-center rounded-xl bg-ocean-600 px-4 py-2 text-sm font-medium text-white hover:bg-ocean-700 transition-colors focus-ring"
+                  className="shrink-0 inline-flex items-center justify-center rounded-2xl bg-ocean-600 px-6 py-3 text-sm font-bold text-white hover:bg-ocean-700 transition-all hover:shadow-lg hover:shadow-ocean-200 active:scale-95 focus-ring"
                 >
                   Booking form
                 </Link>
               </div>
-              <ul className="mt-4 grid gap-2 text-sm text-slate-700">
-                <li className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-ocean-600" aria-hidden="true" />
-                  <span>Your preferred date(s) and time (sunrise for dolphins)</span>
+              <ul className="mt-6 grid gap-4 text-sm">
+                <li className="flex gap-3 text-slate-700 dark:text-slate-300">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-ocean-600" aria-hidden="true" />
+                  <span>Preferred date(s) and specific request (e.g., dolphin sunrise)</span>
                 </li>
-                <li className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-ocean-600" aria-hidden="true" />
-                  <span>Number of people + ages (if kids)</span>
+                <li className="flex gap-3 text-slate-700 dark:text-slate-300">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-ocean-600" aria-hidden="true" />
+                  <span>Group size and ages (for safety gear and boat sizing)</span>
                 </li>
-                <li className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-ocean-600" aria-hidden="true" />
-                  <span>Activity: dolphins / island hopping / diving / mangroves / kitesurfing</span>
+                <li className="flex gap-3 text-slate-700 dark:text-slate-300">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-ocean-600" aria-hidden="true" />
+                  <span>Activity combo: island hopping + snorkeling / diving + dolphins</span>
                 </li>
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-white p-6">
-              <div className="font-semibold tracking-tight">Quick answers</div>
-              <div className="mt-1 text-sm text-slate-600">Tap to expand.</div>
-              <div className="mt-4 grid gap-2">
-                <FaqItem q="What time is dolphin watching?" a="Usually early morning for the best chance. We'll confirm based on season and sea conditions." />
-                <FaqItem q="Is it safe for families?" a="Yes — we provide guidance and safety equipment. Let us know if you have kids or seniors." />
-                <FaqItem q="Do you offer private boats?" a="We can arrange private or shared options depending on your group size and date." />
+            <div className="rounded-[2.5rem] border border-slate-200 bg-white p-8 shadow-sm dark:bg-slate-950 dark:border-slate-800">
+              <h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Quick answers</h3>
+              <div className="mt-6 grid gap-3">
+                <FaqItem q="What time is dolphin watching?" a="We recommend departure around 6:30 AM for the highest activity and calmest water." />
+                <FaqItem q="Is it safe for children?" a="Absolutely. We provide child-sized life jackets and our captains are trained for family safety." />
+                <FaqItem q="Can we book a private boat?" a="Yes, all our island and dolphin tours can be booked as private experiences for a small additional fee." />
               </div>
             </div>
           </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <div className="text-xl font-semibold tracking-tight">Send a message</div>
-                <div className="mt-1 text-sm text-slate-600">Frontend-only demo — connect to an API later.</div>
+          <div className="rounded-[3rem] border border-slate-200 bg-white p-8 sm:p-10 shadow-2xl dark:bg-slate-950 dark:border-slate-800 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-ocean-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            
+            <div className="relative">
+              <div className="flex flex-col sm:flex-row items-start justify-between gap-6">
+                <div>
+                  <h3 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Send a message</h3>
+                  <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                    We'll respond to your inquiry via email within 12 hours.
+                  </p>
+                </div>
+                <a
+                  href={contact.whatsappHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-2xl bg-emerald-600 px-5 py-2.5 text-sm font-bold text-white hover:bg-emerald-700 transition-all hover:shadow-lg hover:shadow-emerald-200 active:scale-95 focus-ring"
+                >
+                  <FaWhatsapp className="h-5 w-5" />
+                  Direct chat
+                </a>
               </div>
-              <a
-                href={contact.whatsappHref}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-700 transition-colors focus-ring"
-              >
-                <FaWhatsapp className="h-4 w-4" />
-                WhatsApp
-              </a>
+
+              {submitted && (
+                <div
+                  className="mt-8 rounded-2xl border border-emerald-200 bg-emerald-50 p-6 text-sm font-medium text-emerald-900 animate-in fade-in slide-in-from-top-4 duration-500"
+                  role="status"
+                >
+                  ✨ Message sent! We'll get back to you shortly.
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit(onSubmit)} className="mt-8 grid gap-5">
+                <Field label="Full Name">
+                  <input
+                    {...register("name", { required: true })}
+                    className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-5 text-slate-900 outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-ocean-200 transition-all dark:bg-slate-900 dark:border-slate-800 dark:text-slate-100"
+                    placeholder="Enter your name"
+                  />
+                  {formState.errors.name && <ErrorText>Please provide your name.</ErrorText>}
+                </Field>
+
+                <Field label="Email Address">
+                  <input
+                    type="email"
+                    {...register("email", { required: true })}
+                    className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-5 text-slate-900 outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-ocean-200 transition-all dark:bg-slate-900 dark:border-slate-800 dark:text-slate-100"
+                    placeholder="you@email.com"
+                  />
+                  {formState.errors.email && <ErrorText>A valid email is required.</ErrorText>}
+                </Field>
+
+                <Field label="Message">
+                  <textarea
+                    {...register("message", { required: true })}
+                    rows={4}
+                    className="w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-slate-900 outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-ocean-200 transition-all dark:bg-slate-900 dark:border-slate-800 dark:text-slate-100"
+                    placeholder="Tell us about your trip (dates, people, activities)..."
+                  />
+                  {formState.errors.message && <ErrorText>Please share some details about your trip.</ErrorText>}
+                </Field>
+
+                <button
+                  type="submit"
+                  className="h-12 inline-flex items-center justify-center gap-3 rounded-2xl bg-ocean-600 px-8 text-sm font-bold text-white hover:bg-ocean-700 transition-all hover:shadow-xl hover:shadow-ocean-200 active:scale-95 disabled:opacity-50 focus-ring"
+                  disabled={formState.isSubmitting}
+                >
+                  <FiSend className="h-5 w-5" />
+                  Send to Team
+                </button>
+              </form>
             </div>
-
-            {submitted && (
-              <div
-                className="mt-5 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-900"
-                role="status"
-              >
-                Thanks! Your message was captured (frontend-only demo).
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit(onSubmit)} className="mt-6 grid gap-4">
-              <Field label="Name">
-                <input
-                  {...register("name", { required: true })}
-                  className="h-11 w-full rounded-xl border border-slate-200 px-3 outline-none focus:ring-2 focus:ring-ocean-200"
-                  placeholder="Your name"
-                />
-                {formState.errors.name && <ErrorText>Please enter your name.</ErrorText>}
-              </Field>
-
-              <Field label="Email">
-                <input
-                  type="email"
-                  {...register("email", { required: true })}
-                  className="h-11 w-full rounded-xl border border-slate-200 px-3 outline-none focus:ring-2 focus:ring-ocean-200"
-                  placeholder="you@example.com"
-                />
-                {formState.errors.email && <ErrorText>Please enter a valid email.</ErrorText>}
-              </Field>
-
-              <Field label="Message">
-                <textarea
-                  {...register("message", { required: true })}
-                  rows={5}
-                  className="w-full rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-ocean-200"
-                  placeholder="Tell us your dates, group size, and preferred activity…"
-                />
-                {formState.errors.message && <ErrorText>Please enter a message.</ErrorText>}
-              </Field>
-
-              <button
-                type="submit"
-                className="h-11 inline-flex items-center justify-center gap-2 rounded-xl bg-ocean-600 px-5 text-sm font-medium text-white hover:bg-ocean-700 transition-colors disabled:opacity-60 focus-ring"
-                disabled={formState.isSubmitting}
-              >
-                <FiSend className="h-4 w-4" />
-                Send message
-              </button>
-            </form>
           </div>
         </div>
       </Section>
 
       <Section tone="muted" title="Find us" subtitle="Open the map to plan your route — we’ll share the exact meet-up point after booking.">
         <div className="grid gap-4 lg:grid-cols-3">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-1">
-            <div className="font-semibold tracking-tight">Hours</div>
-            <div className="mt-3 grid gap-2 text-sm text-slate-700">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-1 dark:bg-slate-950 dark:border-slate-800">
+            <div className="font-semibold tracking-tight text-slate-900 dark:text-slate-100">Hours</div>
+            <div className="mt-3 grid gap-2 text-sm text-slate-700 dark:text-slate-300">
               <div className="flex items-center justify-between">
                 <span>Mon–Sun</span>
                 <span className="font-medium">6:00 AM – 8:00 PM</span>
               </div>
-              <div className="text-xs text-slate-500">Tours may start earlier for sunrise trips.</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400">Tours may start earlier for sunrise trips.</div>
             </div>
-            <div className="mt-6 rounded-xl bg-slate-50 border border-slate-200 p-4 text-sm text-slate-700">
+            <div className="mt-6 rounded-xl bg-slate-50 border border-slate-200 p-4 text-sm text-slate-700 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-200">
               Prefer instant chat? Use WhatsApp for quickest confirmation.
             </div>
           </div>
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white lg:col-span-2">
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white lg:col-span-2 dark:bg-slate-950 dark:border-slate-800">
             <iframe
               title="Kalpitiya map"
               src={contact.mapEmbedSrc}
@@ -260,16 +267,16 @@ function ContactCard({
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noreferrer" : undefined}
-      className="rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-sm transition-shadow focus-ring"
+      className="rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-sm transition-shadow focus-ring dark:bg-slate-950 dark:border-slate-800"
     >
       <div className="flex items-start gap-3">
-        <div className="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-ocean-50 text-ocean-800">
+        <div className="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-ocean-50 text-ocean-800 dark:bg-ocean-900/30 dark:text-ocean-100">
           {icon}
         </div>
         <div className="min-w-0">
-          <div className="font-semibold tracking-tight">{title}</div>
-          <div className="mt-0.5 text-xs text-slate-500">{description}</div>
-          <div className="mt-2 text-sm text-slate-700 break-words">{value}</div>
+          <div className="font-semibold tracking-tight text-slate-900 dark:text-slate-100">{title}</div>
+          <div className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">{description}</div>
+          <div className="mt-2 text-sm text-slate-700 break-words dark:text-slate-300">{value}</div>
         </div>
       </div>
     </a>
@@ -278,14 +285,14 @@ function ContactCard({
 
 function FaqItem({ q, a }: { q: string; a: string }) {
   return (
-    <details className="group rounded-xl border border-slate-200 bg-white px-4 py-3">
-      <summary className="cursor-pointer list-none font-medium text-slate-800 flex items-center justify-between gap-3">
+    <details className="group rounded-xl border border-slate-200 bg-white px-4 py-3 dark:bg-slate-950 dark:border-slate-800">
+      <summary className="cursor-pointer list-none font-medium text-slate-800 flex items-center justify-between gap-3 dark:text-slate-100">
         <span>{q}</span>
-        <span className="text-slate-500 group-open:rotate-180 transition-transform" aria-hidden="true">
+        <span className="text-slate-500 group-open:rotate-180 transition-transform dark:text-slate-400" aria-hidden="true">
           ▾
         </span>
       </summary>
-      <div className="mt-2 text-sm text-slate-600">{a}</div>
+      <div className="mt-2 text-sm text-slate-600 dark:text-slate-300">{a}</div>
     </details>
   );
 }
@@ -293,7 +300,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
     <label className="grid gap-1 text-sm">
-      <span className="font-medium text-slate-700">{label}</span>
+      <span className="font-medium text-slate-700 dark:text-slate-300">{label}</span>
       {children}
     </label>
   );

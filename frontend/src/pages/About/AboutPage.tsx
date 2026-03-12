@@ -33,74 +33,85 @@ export default function AboutPage() {
         }
       />
 
-      <Section title="Kalpitiya at a glance" subtitle="Quick context to help you plan the perfect day.">
-        <div className="grid gap-4 md:grid-cols-4">
+      <Section 
+        title="Kalpitiya at a glance" 
+        subtitle="Experience a unique blend of nature, culture, and coastal adventure."
+        tone="sand"
+        divider="wave-bottom"
+      >
+        <div className="grid gap-6 md:grid-cols-4">
           {[
-            { k: "Signature", v: "Dolphin sunrise" },
-            { k: "Landscape", v: "Lagoon + islands" },
-            { k: "Best for", v: "Nature + water" },
-            { k: "Vibe", v: "Relaxed coastal" }
+            { k: "Signature", v: "Dolphin sunrise", icon: "🐬" },
+            { k: "Landscape", v: "Lagoon + islands", icon: "🏝️" },
+            { k: "Best for", v: "Nature + water", icon: "🌊" },
+            { k: "Vibe", v: "Relaxed coastal", icon: "☀️" }
           ].map((s) => (
             <div
               key={s.k}
-              className="rounded-2xl border border-slate-200 bg-white p-5 dark:bg-slate-950 dark:border-slate-800"
+              className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl transition-all duration-300 dark:bg-slate-900 dark:border-slate-800"
             >
-              <div className="text-xs text-slate-500 dark:text-slate-400">{s.k}</div>
-              <div className="mt-2 font-semibold tracking-tight">{s.v}</div>
+              <div className="text-3xl mb-4 transform group-hover:scale-125 transition-transform duration-300">{s.icon}</div>
+              <div className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">{s.k}</div>
+              <div className="mt-2 text-lg font-bold tracking-tight text-slate-900 dark:text-white">{s.v}</div>
             </div>
           ))}
         </div>
       </Section>
 
       <Section
-        tone="muted"
+        tone="ocean"
         title="What makes it special"
-        subtitle="Kalpitiya blends wildlife, calm lagoon routes, and wind season thrills - with plenty of photo moments."
+        subtitle="A coastal gem where the Indian Ocean meets peaceful lagoons and thriving mangroves."
       >
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-3xl overflow-hidden border border-slate-200 bg-white dark:bg-slate-950 dark:border-slate-800">
-            <div className="aspect-[16/10] bg-slate-100 dark:bg-slate-900">
-              <img src="/images/lagoon.JPG" alt="Kalpitiya lagoon" className="h-full w-full object-cover" decoding="async" />
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="group rounded-[2rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-500 shadow-2xl">
+            <div className="aspect-[16/10] bg-slate-900 overflow-hidden">
+              <img src="/images/lagoon.JPG" alt="Kalpitiya lagoon" className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700" decoding="async" />
             </div>
-            <div className="p-6">
-              <div className="font-semibold tracking-tight">Lagoon routes & mangroves</div>
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                Peaceful boat rides, birds, and golden-hour light - perfect for families and photographers.
+            <div className="p-8">
+              <h3 className="text-xl font-bold text-white">Lagoon routes & mangroves</h3>
+              <p className="mt-3 text-ocean-100/80 leading-relaxed">
+                Peaceful boat rides through emerald waters, hidden bird sanctuaries, and golden-hour light — perfect for families and nature photographers.
               </p>
             </div>
           </div>
 
-          <div className="rounded-3xl overflow-hidden border border-slate-200 bg-white dark:bg-slate-950 dark:border-slate-800">
-            <div className="aspect-[16/10] bg-slate-100 dark:bg-slate-900">
-              <img src="/images/dolphin.jpg" alt="Dolphin watching" className="h-full w-full object-cover" decoding="async" />
+          <div className="group rounded-[2rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-500 shadow-2xl">
+            <div className="aspect-[16/10] bg-slate-900 overflow-hidden">
+              <img src="/images/dolphin.jpg" alt="Dolphin watching" className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700" decoding="async" />
             </div>
-            <div className="p-6">
-              <div className="font-semibold tracking-tight">Wildlife at sunrise</div>
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                Early starts pay off - calm seas and the best chance to spot spinner dolphins.
+            <div className="p-8">
+              <h3 className="text-xl font-bold text-white">Wildlife at sunrise</h3>
+              <p className="mt-3 text-ocean-100/80 leading-relaxed">
+                Early starts reward you with calm seas and the magical sight of hundreds of spinner dolphins dancing in their natural habitat.
               </p>
             </div>
           </div>
         </div>
       </Section>
 
-      <Section title="Plan your trip" subtitle="Choose your style: relaxed, adventurous, or a bit of both.">
-        <div className="grid gap-4 md:grid-cols-3">
+      <Section 
+        title="Plan your trip" 
+        subtitle="Tailor your stay in Kalpitiya precisely to your rhythm and spirit of adventure."
+        tone="glass"
+        divider="wave-top"
+      >
+        <div className="grid gap-6 md:grid-cols-3">
           {[
-            { title: "First time", text: "Try dolphin watching + an easy island stop for swimming and photos." },
-            { title: "Adventure", text: "Add diving or kitesurfing — ask for seasonal wind and sea conditions." },
-            { title: "Nature lovers", text: "Mangroves at sunset are calm, scenic, and great for birdwatching." }
+            { title: "First time", text: "Start with a classic dolphin watching trip followed by a relaxing afternoon on the pristine islands." },
+            { title: "Adventure", text: "Dive into the deep blue or harness the wind with world-class kitesurfing — let us guide you to the best spots." },
+            { title: "Nature lovers", text: "Explore the ancient mangroves at sunset for a serene experience surrounded by local wildlife." }
           ].map((c) => (
             <div
               key={c.title}
-              className="rounded-2xl border border-slate-200 bg-white p-6 dark:bg-slate-950 dark:border-slate-800"
+              className="group relative rounded-3xl border border-slate-200 bg-white p-8 hover:shadow-2xl transition-all duration-300 dark:bg-slate-950 dark:border-slate-800"
             >
-              <div className="font-semibold tracking-tight">{c.title}</div>
-              <div className="mt-2 text-sm text-slate-600 dark:text-slate-400">{c.text}</div>
-              <div className="mt-4">
-                <Link to="/activities" className="text-sm font-medium text-ocean-700 hover:underline dark:text-sand-100">
-                  Browse activities →
-                </Link>
+              <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-ocean-400 to-sand-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white">{c.title}</h3>
+              <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{c.text}</p>
+              <div className="mt-6 flex items-center text-sm font-semibold text-ocean-700 dark:text-sand-100 group-hover:gap-2 transition-all">
+                <Link to="/activities">Browse activities</Link>
+                <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">→</span>
               </div>
             </div>
           ))}

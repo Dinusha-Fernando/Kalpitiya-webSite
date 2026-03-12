@@ -52,42 +52,53 @@ export default function ActivityDetailsPage() {
         }
       />
 
-      <Section title="Highlights" subtitle="A quick snapshot of what you’ll experience.">
-        <div className="grid gap-4 lg:grid-cols-3">
+      <Section 
+        title="Experience highlights" 
+        subtitle="Every detail planned to ensure you get the most out of Kalpitiya's natural beauty."
+        tone="sand"
+        divider="wave-bottom"
+      >
+        <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">
-            <ul className="grid gap-3 sm:grid-cols-2">
+            <ul className="grid gap-4 sm:grid-cols-2">
               {activity.highlights.map((h) => (
                 <li
                   key={h}
-                  className="rounded-2xl border border-slate-200 bg-white p-4 text-slate-700 dark:bg-slate-950 dark:border-slate-800 dark:text-slate-200"
+                  className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex items-start gap-4 dark:bg-slate-900 dark:border-slate-800"
                 >
-                  {h}
+                  <span className="shrink-0 h-6 w-6 rounded-full bg-ocean-100 flex items-center justify-center text-ocean-600 group-hover:bg-ocean-600 group-hover:text-white transition-colors">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span className="text-slate-700 font-medium leading-tight dark:text-slate-200">{h}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 dark:bg-slate-950 dark:border-slate-800">
-            <div className="font-semibold tracking-tight">Good to know</div>
-            <div className="mt-3 grid gap-2 text-sm text-slate-700 dark:text-slate-300">
-              <div className="flex items-center justify-between">
-                <span>Duration</span>
-                <span className="font-medium">{activity.duration}</span>
+          <div className="rounded-[2.5rem] border border-slate-200 bg-white p-8 shadow-xl dark:bg-slate-950 dark:border-slate-800 relative overflow-hidden">
+             <div className="absolute top-0 right-0 w-24 h-24 bg-ocean-100/50 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+            <h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100 mb-6">Practical Details</h3>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between text-sm py-3 border-b border-slate-100 dark:border-slate-800">
+                <span className="text-slate-500 font-medium">Approx. Duration</span>
+                <span className="font-bold text-slate-900 dark:text-slate-100">{activity.duration}</span>
               </div>
-              <div className="flex items-center justify-between">
-                <span>From</span>
-                <span className="font-medium">{activity.priceFrom}</span>
+              <div className="flex items-center justify-between text-sm py-3 border-b border-slate-100 dark:border-slate-800">
+                <span className="text-slate-500 font-medium">Price Starts From</span>
+                <span className="font-bold text-ocean-600 dark:text-sand-100">{activity.priceFrom}</span>
               </div>
-              <div className="flex items-center justify-between">
-                <span>Style</span>
-                <span className="font-medium capitalize">{activity.category}</span>
+              <div className="flex items-center justify-between text-sm py-3 border-b border-slate-100 dark:border-slate-800">
+                <span className="text-slate-500 font-medium">Activity Style</span>
+                <span className="font-bold capitalize text-slate-900 dark:text-slate-100">{activity.category}</span>
               </div>
             </div>
-            <div className="mt-5">
+            <div className="mt-8">
               <Link
                 to="/booking"
-                className="w-full inline-flex items-center justify-center rounded-xl bg-ocean-600 px-4 py-3 text-sm font-medium text-white hover:bg-ocean-700 transition-colors focus-ring"
+                className="w-full inline-flex items-center justify-center rounded-2xl bg-ocean-600 px-6 py-4 text-sm font-bold text-white hover:bg-ocean-700 hover:shadow-lg transition-all active:scale-95 focus-ring"
               >
-                Request booking
+                Reserve this tour
               </Link>
             </div>
           </div>
@@ -95,22 +106,23 @@ export default function ActivityDetailsPage() {
       </Section>
 
       <Section
-        tone="muted"
-        title="Sample itinerary"
-        subtitle="This is a flexible outline - final timing depends on the day's conditions."
+        tone="ocean"
+        title="Your journey with us"
+        subtitle="A typical flow for this activity. We stay flexible to catch the best moments."
       >
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-3">
           {[
-            { t: "Meet & depart", d: "Quick briefing, safety checks, and the best start time for the activity." },
-            { t: "Experience", d: "Main activity time - with photo stops and adjustments for comfort." },
-            { t: "Return", d: "Back to shore, optional extra stop if conditions allow." }
+            { t: "Preparation & Departure", icon: "⛵", d: "Personalized briefing, life-jacket fitting, and heading out at the optimal morning time." },
+            { t: "Main Experience", icon: "✨", d: "Immersive time with the wildlife, islands, or corals, including dedicated photo stops." },
+            { t: "Return & Relax", icon: "🌊", d: "A scenic cruise back to the mainland with optional stops at quiet coastal spots." }
           ].map((s) => (
             <div
               key={s.t}
-              className="rounded-2xl border border-slate-200 bg-white p-6 dark:bg-slate-950 dark:border-slate-800"
+              className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
             >
-              <div className="font-semibold tracking-tight">{s.t}</div>
-              <div className="mt-2 text-sm text-slate-600 dark:text-slate-400">{s.d}</div>
+              <div className="text-4xl mb-4 transform group-hover:rotate-12 transition-transform">{s.icon}</div>
+              <h3 className="text-lg font-bold text-white">{s.t}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-ocean-100/70">{s.d}</p>
             </div>
           ))}
         </div>

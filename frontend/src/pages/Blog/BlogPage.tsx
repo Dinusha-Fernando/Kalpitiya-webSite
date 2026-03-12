@@ -34,33 +34,58 @@ export default function BlogPage() {
         }
       />
 
-      <Section title="Latest guides" subtitle="Designed for readability now - connect to a CMS later.">
-        <div className="grid gap-5 md:grid-cols-3">
+      <Section 
+        title="Travel insights" 
+        subtitle="Practical guides and local stories to help you plan the perfect coastal escape."
+        tone="sand"
+        divider="wave-bottom"
+      >
+        <div className="grid gap-8 md:grid-cols-3">
           {posts.map((p) => (
             <Link
               key={p.id}
               to={`/blog/${p.slug}`}
-              className="group overflow-hidden rounded-2xl border border-slate-200 bg-white hover:shadow-md transition-shadow focus-ring dark:bg-slate-950 dark:border-slate-800"
+              className="group overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-sm hover:shadow-2xl transition-all duration-500 focus-ring dark:bg-slate-900 dark:border-slate-800"
             >
-              <div className="aspect-[16/10] bg-slate-100 overflow-hidden dark:bg-slate-900">
+              <div className="aspect-[16/11] bg-slate-100 overflow-hidden dark:bg-slate-800 relative">
                 <img
                   src={p.coverImageUrl}
                   alt={p.title}
-                  className="h-full w-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                  className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
                   decoding="async"
                 />
-              </div>
-              <div className="p-5">
-                <div className="flex items-center justify-between gap-3 text-xs text-slate-500 dark:text-slate-400">
-                  <span>{p.date}</span>
-                  <span className="truncate">{p.tags[0] ?? "Guide"}</span>
+                <div className="absolute top-4 left-4 glass px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-ocean-900 dark:text-sand-100">
+                  {p.tags[0] ?? "Guide"}
                 </div>
-                <h3 className="mt-2 font-semibold tracking-tight">{p.title}</h3>
-                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 line-clamp-3">{p.excerpt}</p>
-                <div className="mt-4 text-sm font-medium text-ocean-700 dark:text-sand-100">Read guide →</div>
+              </div>
+              <div className="p-8">
+                <div className="text-xs font-bold text-slate-400 tabular-nums">
+                  {p.date}
+                </div>
+                <h3 className="mt-3 text-xl font-bold tracking-tight text-slate-900 group-hover:text-ocean-600 transition-colors dark:text-slate-100 dark:group-hover:text-ocean-400">
+                  {p.title}
+                </h3>
+                <p className="mt-3 text-sm text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed">
+                  {p.excerpt}
+                </p>
+                <div className="mt-6 flex items-center text-sm font-bold text-ocean-600 dark:text-ocean-400 group-hover:gap-2 transition-all">
+                  <span>Read guide</span>
+                  <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">→</span>
+                </div>
               </div>
             </Link>
           ))}
+        </div>
+      </Section>
+
+      <Section tone="deep" divider="wave-top" title="Join our community" subtitle="Stay updated with the latest sightings and tours by following us on social media.">
+        <div className="flex flex-col items-center justify-center p-12 glass-dark rounded-[3rem] border-2 border-dashed border-white/20">
+          <div className="text-4xl mb-6">📸</div>
+          <p className="text-2xl font-bold text-white text-center">Follow our journey @KalpitiyaParadise</p>
+          <div className="mt-8 flex gap-4">
+             <button className="px-8 py-3 rounded-2xl bg-white text-ocean-900 font-bold hover:scale-105 transition-transform active:scale-95">Instagram</button>
+             <button className="px-8 py-3 rounded-2xl bg-ocean-600 text-white font-bold hover:scale-105 transition-transform active:scale-95">Facebook</button>
+          </div>
         </div>
       </Section>
     </>

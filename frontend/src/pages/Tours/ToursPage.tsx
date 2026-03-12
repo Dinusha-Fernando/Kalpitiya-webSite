@@ -35,8 +35,13 @@ export default function ToursPage() {
         }
       />
 
-      <Section title="Popular packages" subtitle="Simple, clear options - great starting points for planning.">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <Section 
+        title="Popular packages" 
+        subtitle="Unforgettable journeys designed to show you the best of Kalpitiya's natural wonders."
+        tone="sand"
+        divider="wave-bottom"
+      >
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {tours.map((t) => (
             <TourCard key={t.id} tour={t} />
           ))}
@@ -44,22 +49,23 @@ export default function ToursPage() {
       </Section>
 
       <Section
-        tone="muted"
-        title="What's included"
-        subtitle="You can keep it simple, or build a full day - we'll help you choose based on conditions and your group."
+        tone="ocean"
+        title="Experience more"
+        subtitle="We help you build the perfect day, whether you're seeking serenity or a shot of adrenaline."
       >
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-3">
           {[
-            { title: "Clear plan", text: "Timings, pick-up guidance, and what to bring - shared before the trip." },
-            { title: "Flexible options", text: "Private vs shared, sunrise vs sunset, and island stop duration." },
-            { title: "Add-ons", text: "Snorkeling, picnic, camping, photography stops, and special requests." }
+            { title: "Clear planning", icon: "📋", text: "Receive full details on timings, weather-ready gear, and pickup instructions before every trip." },
+            { title: "Your way", icon: "✨", text: "Prefer a private sunset? A longer island stop? We're experts at tailoring trips to your group's vibe." },
+            { title: "Added magic", icon: "🦐", text: "Enhance your tour with fresh seafood picnics, snorkeling gear, or professional photography sessions." }
           ].map((c) => (
             <div
               key={c.title}
-              className="rounded-2xl border border-slate-200 bg-white p-6 dark:bg-slate-950 dark:border-slate-800"
+              className="group border border-white/10 bg-white/5 p-8 rounded-[2rem] backdrop-blur-sm transition-all duration-300 hover:bg-white/10"
             >
-              <div className="font-semibold tracking-tight">{c.title}</div>
-              <div className="mt-2 text-sm text-slate-600 dark:text-slate-400">{c.text}</div>
+              <div className="text-3xl mb-4 transform group-hover:scale-110 transition-transform">{c.icon}</div>
+              <h3 className="text-xl font-bold text-white">{c.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-ocean-100/70">{c.text}</p>
             </div>
           ))}
         </div>

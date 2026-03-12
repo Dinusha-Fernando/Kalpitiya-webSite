@@ -11,6 +11,7 @@ import BlogPostPage from "@/pages/BlogPost/BlogPostPage";
 import BookingPage from "@/pages/Booking/BookingPage";
 import ContactPage from "@/pages/Contact/ContactPage";
 import NotFoundPage from "@/pages/NotFound/NotFoundPage";
+import ServicesPage from "@/pages/Services/ServicesPage";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/services" element={<ServicesPage />} />
         <Route path="/booking" element={<BookingPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<NotFoundPage />} />

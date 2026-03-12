@@ -3,42 +3,68 @@ import { FiCompass, FiFeather, FiShield, FiWind } from "react-icons/fi";
 const features = [
   {
     title: "Local-first guides",
-    description: "Friendly hosts who know the lagoon, seasons, and safe routes.",
-    icon: <FiCompass className="h-5 w-5" />
+    description: "Friendly hosts who know the lagoon, seasons, and safe routes inside out.",
+    icon: <FiCompass className="h-6 w-6" />,
+    colSpan: "md:col-span-2",
+    image: "/images/lagoon.JPG"
   },
   {
     title: "Wildlife moments",
-    description: "Sunrise dolphin trips and calm nature tours built around good timing.",
-    icon: <FiFeather className="h-5 w-5" />
+    description: "Sunrise dolphin trips and calm nature tours built around perfect timing.",
+    icon: <FiFeather className="h-6 w-6" />,
+    colSpan: "md:col-span-1",
   },
   {
     title: "Comfort & safety",
-    description: "Clear instructions, sensible plans, and easy-to-understand booking.",
-    icon: <FiShield className="h-5 w-5" />
+    description: "Clear instructions, sensible plans, and completely stress-free booking.",
+    icon: <FiShield className="h-6 w-6" />,
+    colSpan: "md:col-span-1",
   },
   {
     title: "Wind & water",
-    description: "Seasonal conditions that make Kalpitiya perfect for kitesurfing and lagoon days.",
-    icon: <FiWind className="h-5 w-5" />
+    description: "Legendary seasonal conditions that make Kalpitiya the absolute perfect paradise for kitesurfing.",
+    icon: <FiWind className="h-6 w-6" />,
+    colSpan: "md:col-span-2",
+    image: "/images/kite.jpg"
   }
 ];
 
 export default function FeatureGrid() {
   return (
-    <div className="grid gap-4 md:grid-cols-2">
-      {features.map((f) => (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+      {features.map((f, index) => (
         <div
           key={f.title}
-          className="rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-sm transition-shadow dark:bg-slate-950 dark:border-slate-800"
+          className={`group relative overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] bg-white/5 border border-white/10 p-5 sm:p-6 sm:min-h-[220px] flex flex-col justify-end transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] ${f.colSpan}`}
         >
-          <div className="flex items-start gap-4">
-            <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-ocean-50 text-ocean-800 dark:bg-slate-900 dark:text-sand-100">
+          {f.image ? (
+            <>
+              <div className="absolute inset-0 z-0">
+                <img
+                  src={f.image}
+                  alt={f.title}
+                  className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  decoding="async"
+                />
+              </div>
+              <div className="absolute inset-0 z-10 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
+            </>
+          ) : (
+            <div className="absolute inset-0 z-0 bg-gradient-to-br from-white/10 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100" />
+          )}
+
+          <div className="relative z-20 mt-auto">
+            <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 text-white shadow-inner backdrop-blur-md transition-all duration-500 group-hover:scale-110 group-hover:bg-white/30 group-hover:rotate-6">
               {f.icon}
             </div>
-            <div>
-              <div className="font-semibold tracking-tight">{f.title}</div>
-              <div className="mt-1 text-sm text-slate-600 dark:text-slate-400">{f.description}</div>
-            </div>
+            
+            <h3 className="text-lg sm:text-xl font-display text-white transition-colors duration-300 group-hover:text-sand-300">
+              {f.title}
+            </h3>
+            
+            <p className="mt-2 text-xs sm:text-sm leading-relaxed text-white/80 transition-all duration-500 group-hover:text-white transform translate-y-2 opacity-80 group-hover:translate-y-0 group-hover:opacity-100">
+              {f.description}
+            </p>
           </div>
         </div>
       ))}
