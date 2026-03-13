@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="pt-24 pb-12 grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <div className="inline-flex items-center gap-3">
-              <img src="/images/logo.png" alt="Kalpitiya" className="h-12 w-12 rounded-full object-cover shadow-2xl border border-white/20" />
+              <img src="/images/logo.png?v=3" alt="Kalpitiya" className="h-12 w-12 rounded-full object-cover shadow-2xl border border-white/20" />
               <div>
                 <div className="font-display text-3xl tracking-tight leading-none text-white">Kalpitiya</div>
                 <div className="text-xs uppercase tracking-[0.3em] font-black text-sand-300">Tourism</div>
@@ -40,6 +40,24 @@ export default function Footer() {
                 <li><a href="/tours" className="text-ocean-100/60 hover:text-white transition-colors">Popular Tours</a></li>
                 <li><a href="/booking" className="text-ocean-100/60 hover:text-white transition-colors">Book Now</a></li>
                 <li><a href="/contact" className="text-ocean-100/60 hover:text-white transition-colors">Contact Us</a></li>
+              </ul>
+            </div>
+            <div>
+              <div className="font-bold text-white mb-6 uppercase tracking-widest text-xs">Contact</div>
+              <ul className="grid gap-4 text-sm">
+                <li>
+                  <a href="mailto:dinushafdo9998@gmail.com" className="text-ocean-100/60 hover:text-white transition-colors block">
+                    dinushafdo9998@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a href="https://wa.me/94775829018" target="_blank" rel="noreferrer" className="text-ocean-100/60 hover:text-white transition-colors block">
+                    +94 77 582 9018
+                  </a>
+                </li>
+                <li className="text-ocean-100/60">
+                  Kalpitiya, Sri Lanka
+                </li>
               </ul>
             </div>
           </div>

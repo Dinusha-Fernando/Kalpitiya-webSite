@@ -49,7 +49,7 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl pointer-events-auto">
         <div className="glass dark:glass-dark rounded-[2rem] sm:rounded-full px-4 sm:px-6 h-16 flex items-center justify-between gap-4 sm:gap-6 shadow-2xl shadow-ocean-900/10 border border-white/50 dark:border-slate-700/50">
           <Link to="/" className="flex items-center gap-2 sm:gap-3">
-            <img src="/images/logo.png" alt="Kalpitiya" className="h-9 w-9 sm:h-10 sm:w-10 rounded-full object-cover shadow-sm" />
+            <img src="/images/logo.png?v=3" alt="Kalpitiya" className="h-9 w-9 sm:h-10 sm:w-10 rounded-full object-cover shadow-sm" />
             <div className="leading-tight hidden sm:block">
               <div className="font-display text-xl tracking-tight text-slate-900 dark:text-white">Kalpitiya</div>
               <div className="text-[10px] uppercase tracking-widest text-ocean-600 dark:text-sand-400 font-bold -mt-0.5">Tourism</div>
@@ -99,20 +99,20 @@ export default function Navbar() {
         <div className="md:hidden">
           <button
             type="button"
-            className="fixed inset-0 z-40 bg-slate-900/40"
+            className="fixed inset-0 z-40 bg-slate-900/40 pointer-events-auto"
             aria-label="Close menu overlay"
             onClick={() => setMobileOpen(false)}
           />
           <div
             id={mobileNavId}
-            className="fixed top-0 right-0 z-50 h-dvh w-[min(22rem,90vw)] bg-white shadow-2xl border-l border-slate-200 dark:bg-slate-950 dark:border-slate-800"
+            className="fixed top-0 right-0 z-50 h-dvh w-[min(22rem,90vw)] bg-white shadow-2xl border-l border-slate-200 dark:bg-slate-950 dark:border-slate-800 pointer-events-auto"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
           >
             <div className="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
               <Link to="/" className="flex items-center gap-3" aria-label="Go to homepage">
-                <img src="/images/logo.png" alt="" className="h-9 w-9 rounded-lg object-contain" />
+                <img src="/images/logo.png?v=3" alt="" className="h-9 w-9 rounded-lg object-contain" />
                 <div className="leading-tight">
                   <div className="font-semibold tracking-tight">Kalpitiya</div>
                   <div className="text-xs text-slate-600 dark:text-slate-400">Tourism</div>
